@@ -42,7 +42,7 @@ function App() {
             <div className="section-head">
               <div>
                 <div className="section-title">About</div>
-                <h2>Design-minded frontend developer</h2>
+                <h2>Detail Oriented Backend Developer</h2>
               </div>
             </div>
             <div className="grid">
