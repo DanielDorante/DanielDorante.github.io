@@ -102,7 +102,36 @@ function App() {
             <div className="section-head">
               <div>
                 <div className="section-title">Experience</div>
-                <h2>Industry Capstone Project — Backend Developer (2024)</h2>
+                <h2>Graduate Software Engineer at SDSI (2026-Present)</h2>
+              </div>
+            </div>
+            <div className="grid">
+              <article className="card">
+                <p>
+                  As a Graduate Software Engineer, I work across Quality Assurance, support operations, troubleshooting, and internal tooling within a large-scale emergency services dispatch environment. My role involves investigating and reproducing software defects, analysing logs and system behaviour, supporting ticket resolution workflows, and collaborating within Agile/Scrum teams using Jira and Azure-based infrastructure. Alongside my assigned QA responsibilities, I have independently developed automation tools, internal utilities, and troubleshooting solutions using C#, .NET, WPF, SQL, and PowerShell to improve workflow efficiency and reduce repetitive manual processes. I regularly collaborate with other graduates through shared repositories, peer-reviewed pull requests, and internal tooling initiatives focused on automation, operational support, and system reliability.
+                </p>
+                <div className="spacer-sm" />
+                <div className="tag-row">
+                  <span className="tag">Dotnet</span>
+                  <span className="tag">Automation</span>
+                  <span className="tag">Jira</span>
+                  <span className="tag">CI/CD</span>
+                  <span className="tag">Support Engineering</span>
+                  <span className="tag">C#</span>
+                  <span className="tag">SQL</span>
+                  <span className="tag">Quality Assurance</span>
+                  <span className="tag">Agile/Scrum</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="capstone">
+          <div className="container">
+            <div className="section-head">
+              <div>
+                <h2>Industry Capstone Project — Backend Developer (2024 - 2025)</h2>
               </div>
             </div>
             <div className="grid">
