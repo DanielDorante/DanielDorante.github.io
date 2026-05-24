@@ -5,7 +5,7 @@ function App() {
         <div className="container nav">
           <div className="brand">
             <span className="brand-badge" />
-            <span>Daniel Dorante BSc</span>
+            <span>Daniel Dorante BIT</span>
           </div>
           <nav style={{ display: 'flex', gap: 6 }}>
             <a href="#about">About</a>
