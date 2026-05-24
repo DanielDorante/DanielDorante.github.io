@@ -31,7 +31,7 @@ function App() {
               </div>
               <figure className="hero-photo">
                 {}
-                <img src="/profile.jpg" alt="Daniel Dorante" width={420} height={420} loading="eager" decoding="async" />
+                <img src="/profile.jpg" alt="Daniel Dorante, Backend Software Engineer" width={420} height={420} loading="eager" decoding="async" />
               </figure>
             </div>
           </div>
