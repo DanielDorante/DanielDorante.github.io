@@ -4,7 +4,7 @@ function App() {
       <header className="site-header">
         <div className="container nav">
           <div className="brand">
-            <span className="brand-badge" />
+            <img src="/red-squirrel.png" className="brand-badge" alt="Red Squirrel" />
             <span>Daniel Dorante BIT</span>
           </div>
           <nav style={{ display: 'flex', gap: 6 }}>
@@ -21,7 +21,7 @@ function App() {
           <div className="container">
             <div className="hero-grid">
               <div className="hero-text">
-                <span className="eyebrow">Portfolio 2025</span>
+                <span className="eyebrow">Portfolio 2026</span>
                 <h1 className="title">Hi, I'm Daniel, I build backend systems and intelligent software</h1>
                 <p className="subtitle">Backend-focused software engineer working across data, machine learning, and intelligent systems. I build clean APIs, scalable tools, and practical ML solutions.</p>
                 <div className="cta-row">
@@ -263,7 +263,7 @@ function App() {
             </div>
             <div className="grid">
               <div className="card">
-                <p>Open to backend or front end roles. For the quickest reply, email me.</p>
+                <p>Let's get in touch</p>
                 <div className="spacer-md" />
                 <div className="cta-row">
                   <a className="btn primary" href="mailto:dpdorante249@gmail.com">Email Me</a>
