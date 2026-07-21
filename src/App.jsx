@@ -1,4 +1,68 @@
+import { useState, useEffect } from 'react';
+
+const PROJECTS = [
+  {
+    id: 'red-squirrel',
+    eyebrow: 'Chess Engine',
+    title: 'Red Squirrel',
+    blurb: 'A custom chess engine designed from the ground up with alpha-beta pruning, move ordering, and a bespoke evaluation function. Includes a full UI built in Pygame for playing, testing, and visualising positions.',
+    detail: 'Built entirely in Python, Red Squirrel implements minimax search with alpha-beta pruning and iterative deepening. The evaluation function weighs material, piece-square tables, pawn structure, and king safety. The Pygame UI supports full game play, FEN import, and position visualisation.',
+    tags: ['Python', 'Pygame', 'Alpha-beta Pruning', 'Open Source'],
+    size: 'sm-6',
+    github: 'https://github.com/DanielDorante/red-squirrel',
+  },
+  {
+    id: 'bird-machine',
+    eyebrow: 'Bird Species Classifier',
+    title: 'Bird Machine',
+    blurb: 'CNN-based bird species classifier built using MobileNetV2 and EfficientNet-Lite, trained on a large labeled dataset. Achieved 91% accuracy with a full preprocessing, training, and evaluation pipeline.',
+    detail: 'Trained on thousands of labeled bird images using transfer learning from MobileNetV2 and EfficientNet-Lite. Includes data augmentation, class balancing, and a full evaluation pipeline with confusion matrix output. Achieved 91% top-1 accuracy on the held-out test set.',
+    tags: ['Python', 'Tensorflow', 'CNN', 'Deep Learning', 'Computer Vision'],
+    size: 'sm-6',
+    github: 'https://github.com/DanielDorante/bird-machine',
+  },
+  {
+    id: 'carbonchain',
+    eyebrow: 'Block Chain Application',
+    title: 'CarbonChain',
+    blurb: 'Decentralized accountability platform built with Ethereum smart contracts to track and reward sustainable corporate behaviour. Includes a frontend dashboard and full Solidity-based contract system.',
+    detail: 'CarbonChain uses Solidity smart contracts deployed on an Ethereum test network to log and verify corporate sustainability commitments. Companies earn on-chain tokens for verified sustainable actions. Includes a React frontend with MetaMask integration for wallet connection and transaction signing.',
+    tags: ['Solidity', 'Ethereum', 'Blockchain', 'MetaMask'],
+    size: 'sm-4',
+    github: 'https://github.com/DanielDorante/carbonchain',
+  },
+  {
+    id: 'ergo-quest',
+    eyebrow: 'Java Desktop Application',
+    title: 'Ergo Quest',
+    blurb: 'Java-based desktop application for tracking and visualising user gaming habits. Designed custom UI components and implemented local data storage for session analytics and performance insights.',
+    detail: 'Ergo Quest monitors active gaming sessions and aggregates play time, session length, and break frequency into a local analytics dashboard. Built with Java Swing with fully custom-painted UI components and a SQLite database for session persistence.',
+    tags: ['Java', 'CSS', 'Analytics', 'Desktop App'],
+    size: 'sm-4',
+    github: 'https://github.com/DanielDorante/ErgoQuest',
+  },
+  {
+    id: 'sadboi',
+    eyebrow: 'Cloud Application',
+    title: 'SadBoi',
+    blurb: 'Cloud-hosted web application built with AWS (S3, ECS, EC2) and MongoDB. Implemented containerised services, storage pipelines, and a full frontend interface for data management and retrieval.',
+    detail: 'SadBoi is deployed across AWS S3 for static assets, ECS with Docker containers for backend services, and EC2 for compute. MongoDB Atlas handles data storage. The frontend provides a clean interface for uploading, querying, and visualising stored data with full CRUD operations.',
+    tags: ['AWS', 'MongoDB', 'Docker', 'Cloud Architecture'],
+    size: 'sm-4',
+    github: 'https://github.com/DanielDorante/sadboi',
+  },
+];
+
 function App() {
+  const [activeProject, setActiveProject] = useState(null);
+
+  useEffect(() => {
+    if (!activeProject) return;
+    const onKey = (e) => { if (e.key === 'Escape') setActiveProject(null); };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [activeProject]);
+
   return (
     <>
       <header className="site-header">
@@ -106,23 +170,47 @@ function App() {
               </div>
             </div>
             <div className="grid">
+              <div className="linked-group">
               <article className="card">
+                <h3>Graduate Support Software Engineer</h3>
+                <h4>Jul 2026 - Present</h4>
                 <p>
-                  As a Graduate Software Engineer, I work across Quality Assurance, support operations, troubleshooting, and internal tooling within a large-scale emergency services dispatch environment. My role involves investigating and reproducing software defects, analysing logs and system behaviour, supporting ticket resolution workflows, and collaborating within Agile/Scrum teams using Jira and Azure-based infrastructure. Alongside my assigned QA responsibilities, I have independently developed automation tools, internal utilities, and troubleshooting solutions using C#, .NET, WPF, SQL, and PowerShell to improve workflow efficiency and reduce repetitive manual processes. I regularly collaborate with other graduates through shared repositories, peer-reviewed pull requests, and internal tooling initiatives focused on automation, operational support, and system reliability.
+                  As a Support Engineer, my role bridges software development, system troubleshooting, and customer-facing technical support. I investigate complex application issues, analyse system behaviour, and resolve defects across development, QA, and production environments while working closely with engineering teams.
+
+I contribute to the ongoing development and maintenance of enterprise software through bug fixes, software patches, and improvements to internal processes. The role has strengthened my ability to debug large-scale systems, understand real-world software deployments, and deliver practical solutions for mission critical operational workflows.
+                </p>
+                <div className="spacer-sm" />
+                <div className="tag-row">
+                  <span className="tag">Support Engineering</span>
+                  <span className="tag">Troubleshooting</span>
+                  <span className="tag">Internal Tooling</span>
+                  <span className="tag">Dotnet</span>
+                  <span className="tag">C#</span>
+                  <span className="tag">SQL</span>
+                  <span className="tag">PowerShell</span>
+                  <span className="tag">System Analysis</span>
+                  <span className="tag">Agile/Scrum</span>
+                  <span className="tag">Azure</span>
+                </div>
+              </article>
+              <article className="card">
+                <h3>Quality Assurance Engineer</h3>
+                <h4>Jan 2026  - Jul 2026</h4>
+                <p>
+                  Spent five months in Quality Assurance, learning and mastering the complex architecture of our mission-critical Computer Aided Dispatch (CAD) software used by emergency services across Australia and New Zealand. Managed the testing lifecycle for high-stakes releases, executing rigorous regression and shakeout testing to ensure system stability. Tracked builds in TestRail (Gurock) and utilized Freshdesk (Freshworks) to document ticket progress and attach test outcomes. Alongside daily manual testing, collaborated in Azure DevOps to lay the technical groundwork for future automation, architecting a foundational suite using C# FlaUI, PowerShell, and SQL before transitioning into a software engineering support role
                 </p>
                 <div className="spacer-sm" />
                 <div className="tag-row">
                   <span className="tag">Dotnet</span>
                   <span className="tag">Automation</span>
                   <span className="tag">Jira</span>
-                  <span className="tag">CI/CD</span>
-                  <span className="tag">Support Engineering</span>
                   <span className="tag">C#</span>
                   <span className="tag">SQL</span>
                   <span className="tag">Quality Assurance</span>
-                  <span className="tag">Agile/Scrum</span>
                 </div>
               </article>
+              </div>
+
             </div>
           </div>
         </section>
@@ -163,67 +251,20 @@ function App() {
             </div>
 
             <div className="grid">
-              <article className="card sm-6">
-                <div className="eyebrow">Chess Engine</div>
-                <h3>Red Squirrel</h3>
-                <p>A custom chess engine designed from the ground up with alpha-beta pruning, move ordering, and a bespoke evaluation function. Includes a full UI built in Pygame for playing, testing, and visualising positions.</p>
-                <div className="tag-row">
-                  <span className="tag">Python</span>
-                  <span className="tag">Pygame</span>
-                  <span className="tag">Alpha-beta Pruning</span>
-                  <span className="tag">Open Source</span>
-                </div>
-              </article>
-
-              <article className="card sm-6">
-                <div className="eyebrow">Bird Species Classifier</div>
-                <h3>Bird Machine</h3>
-                <p>CNN-based bird species classifier built using MobileNetV2 and EfficientNet-Lite, trained on a large labeled dataset. Achieved 91% accuracy with a full preprocessing, training, and evaluation pipeline.</p>
-                <div className="tag-row">
-                  <span className="tag">Python</span>
-                  <span className="tag">Tensorflow</span>
-                  <span className="tag">CNN</span>
-                  <span className="tag">Deep Learning</span>
-                  <span className="tag">Computer Vision</span>
-                </div>
-              </article>
-
-              <article className="card sm-4">
-                <div className="eyebrow">Block Chain Application</div>
-                <h3>CarbonChain</h3>
-                <p>Decentralized accountability platform built with Ethereum smart contracts to track and reward sustainable corporate behaviour. Includes a frontend dashboard and full Solidity-based contract system.</p>
-                <div className="tag-row">
-                  <span className="tag">Solidity</span>
-                  <span className="tag">Ethereum</span>
-                  <span className="tag">Blockchain</span>
-                  <span className="tag">MetaMask</span>
-                </div>
-              </article>
-
-              <article className="card sm-4">
-                <div className="eyebrow">Java Desktop Application</div>
-                <h3>Ergo Quest</h3>
-                <p>Java-based desktop application for tracking and visualising user gaming habits. Designed custom UI components and implemented local data storage for session analytics and performance insights.</p>
-                <div className="tag-row">
-                  <span className="tag">Java</span>
-                  <span className="tag">CSS</span>
-                  <span className="tag">Analytics</span>
-                  <span className="tag">Desktop App</span>
-
-                </div>
-              </article>
-
-              <article className="card sm-4">
-                <div className="eyebrow">Cloud Application</div>
-                <h3>SadBoi</h3>
-                <p>Cloud-hosted web application built with AWS (S3, ECS, EC2) and MongoDB. Implemented containerised services, storage pipelines, and a full frontend interface for data management and retrieval.</p>
-                <div className="tag-row">
-                  <span className="tag">AWS</span>
-                  <span className="tag">MongoDB</span>
-                  <span className="tag">Docker</span>
-                  <span className="tag">Cloud Architecture</span>
-                </div>
-              </article>
+              {PROJECTS.map((p) => (
+                <article
+                  key={p.id}
+                  className={`card ${p.size} card-clickable`}
+                  onClick={() => setActiveProject(p)}
+                >
+                  <div className="eyebrow">{p.eyebrow}</div>
+                  <h3>{p.title}</h3>
+                  <p>{p.blurb}</p>
+                  <div className="tag-row">
+                    {p.tags.map((t) => <span key={t} className="tag">{t}</span>)}
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -303,6 +344,21 @@ function App() {
           </div>
         </div>
       </footer>
+
+      {activeProject && (
+        <div className="modal-backdrop" onClick={() => setActiveProject(null)}>
+          <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setActiveProject(null)} aria-label="Close">✕</button>
+            <div className="eyebrow">{activeProject.eyebrow}</div>
+            <h3 style={{ margin: '8px 0 12px' }}>{activeProject.title}</h3>
+            <p style={{ color: 'var(--muted)', marginBottom: 16 }}>{activeProject.detail}</p>
+            <div className="tag-row" style={{ marginBottom: 20 }}>
+              {activeProject.tags.map((t) => <span key={t} className="tag">{t}</span>)}
+            </div>
+            <a className="btn primary" href={activeProject.github} target="_blank" rel="noreferrer">View on GitHub</a>
+          </div>
+        </div>
+      )}
     </>
   )
 }
