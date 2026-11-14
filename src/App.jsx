@@ -166,13 +166,13 @@ function App() {
             <div className="section-head">
               <div>
                 <div className="section-title">Experience</div>
-                <h2>Graduate Software Engineer at SDSI (2026-Present)</h2>
+                <h2>Software Engineer at SDSI (2026-Present)</h2>
               </div>
             </div>
             <div className="grid">
               <div className="linked-group">
               <article className="card">
-                <h3>Graduate Support Software Engineer</h3>
+                <h3>Software Engineer</h3>
                 <h4>Jul 2026 - Present</h4>
                 <p>
                   As a Support Engineer, my role bridges software development, system troubleshooting, and customer-facing technical support. I investigate complex application issues, analyse system behaviour, and resolve defects across development, QA, and production environments while working closely with engineering teams.
